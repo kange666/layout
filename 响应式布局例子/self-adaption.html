@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <title>bootstrup应用</title>
+</head>
+<body>
+<!--自适应设置主要利用媒体查询进行设置：
+媒体查询是非常别致的"有条件的 CSS 规则"。它只适用于一些基于某些规定条件的 CSS。如果满足那些条件，则应用相应的样式。
+-->
+
+<!--bootstrap的栅格系统封装了媒体查询，使其跟方便使用：
+Bootstrap 包含了一个响应式的、移动设备优先的、不固定的网格系统，可以随着设备或视口大小的增加而适当地扩展到 12 列。
+Bootstrap 中的媒体查询允许您基于视口大小移动、显示并隐藏内容。下面的媒体查询在 LESS 文件中使用，用来创建 Bootstrap 网格系统中的关键的分界点阈值。
+/* 超小设备（手机，小于 768px） */
+/* Bootstrap 中默认情况下没有媒体查询 */
+
+/* 小型设备（平板电脑，768px 起） */
+@media (min-width: @screen-sm-min) { ... }
+
+/* 中型设备（台式电脑，992px 起） */
+@media (min-width: @screen-md-min) { ... }
+
+/* 大型设备（大台式电脑，1200px 起） */
+@media (min-width: @screen-lg-min) { ... }
+-->
+
+
+<!--导航栏自适应宽度-->
+<!--基于bootstrup自带的属性，只需设置自带的class属性即可-->
+<!--效果：当页面缩小到一定值时导航栏变为隐藏，点击按钮上下分布显示-->
+<div>
+    <!--导航基本设置-->
+    <nav class="navbar navbar-default navbar-static-top navbar-inverse " >
+        <!--设置容器-->
+        <div class="container">
+            <!--头部设置，主要就是在导航栏缩小的时候来设置显示效果-->
+            <div class="navbar-header">
+                <!--设置按钮，缩小以后点击可以展示文字导航-->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--导航栏logo设置-->
+                <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+            </div>
+            <!--导航栏文字设置-->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!--各个导航-->
+                <ul class="nav navbar-nav">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">公司简介</a></li>
+                    <li><a href="#">解决方案</a></li>
+                    <li><a href="#">成功案例</a></li>
+                </ul>
+                <!--右边搜索框-->
+                <form class="navbar-form navbar-right">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="搜索">
+                        <span class="input-group-btn"><button class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></span>
+                    </div>
+                </form>
+            </div><!--导航栏文字设置-end-->
+        </div>  <!--设置容器-end-->
+    </nav>
+</div>
+<!--导航栏自适应宽度-end-->
+
+<!--设置图文并存时在页面缩小时候的自适应效果-->
+<!--这是一个巨幕的效果，也可以不使用巨幕-->
+<div class="jumbotron">
+    <!--容器设置-->
+    <div class="container">
+        <!--设置显示为一行-->
+        <div class="row">
+            <!--文字自适应设置：
+                    当屏幕为大屏时设置文字所在div占屏幕宽度的5/12（col-lg-5）；中等宽度占屏幕宽度的5/12（col-md-5），右移一个栅格col-lg-offset-1-->
+            <div class="col-lg-5 col-lg-offset-1 col-md-5 ">
+                <!--当屏幕变小时虽然宽度跟着改变，但是高度以及位置改变不了，这样就会出现页面错误，所以需要自己设置媒体查询
+                如：@media (max-width: 1200px) {
+                .banner-title{
+                margin-top:60px;
+                }
+                }
+                @media (max-width: 992px) {
+                .banner-title{
+                margin-top:10px;
+                }
+                }-->
+                <h2 class="banner-title">公司介绍</h2>
+                <p class="banner-detail">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+                    文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+                    文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+                    文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+                    文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+                    文字文字</p>
+            </div>
+            <!--图片自适应设置：-->
+                <!--当屏幕为大屏时设置图片在div占屏幕宽度的5/12（col-lg-5）；中等宽度占屏幕宽度的5/12（col-md-5），屏幕为小时不显示图片：hidden-sm hidden-xs-->
+            <div class="col-lg-5 col-md-5 hidden-sm hidden-xs">
+                <!--图片自适应div高度，以此调整大小：设置图片属性：img-responsive-->
+                <img src="images/person.png" class="img-responsive">
+            </div>
+        </div>
+    </div>
+</div>
+<!--栅格系统深度测试-->
+<div class="container-fluid gray-bg">
+    <div class="list-con">
+        <!--col-lg-4 col-md-6 col-sm-6，这里分别甚至大，中，小3个宽度的分布，当为中小的时候每个div占屏幕宽度的一半，第三个被挤到下面自动排列-->
+        <div class="list-icon col-lg-4 col-md-6 col-sm-6 list01">
+            <h3>网络集成</h3>
+            <p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+                文字文字文字文字文字文字字文字文字</p>
+        </div>
+        <div class="list-icon col-lg-4 col-md-6 col-sm-6 list02">
+            <h3>网络集成</h3>
+            <p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+                文字文字文字文字文字文字字文字文字</p>
+        </div>
+        <div class="list-icon col-lg-4 col-md-6 col-sm-6 list03">
+            <h3>网络集成</h3>
+            <p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+                文字文字文字文字文字文字字文字文字</p>
+        </div>
+        <div class="list-icon col-lg-4 col-md-6 col-sm-6 list04">
+            <h3>网络集成</h3>
+            <p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+                文字文字文字文字文字文字字文字文字</p>
+        </div>
+        <div class="list-icon col-lg-4 col-md-6 col-sm-6 list05">
+            <h3>网络集成</h3>
+            <p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+                文字文字文字文字文字文字字文字文字</p>
+        </div>
+        <div class="list-icon col-lg-4 col-md-6 col-sm-6 list06">
+            <h3>网络集成</h3>
+            <p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+                文字文字文字文字文字文字字文字文字</p>
+        </div>
+    </div>
+
+    <div class="row case-list">
+        <!--这里设置8个图片的排列，同样使用栅格系统，使在屏幕变化时自适应-->
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <img src="images/pic01.jpg">
+            <div class="mask">
+                <h4>成功案例</h4>
+                <p>  文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6"><img src="images/pic02.jpg"> </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6"><img src="images/pic03.jpg"> </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6"><img src="images/pic04.jpg"> </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6"><img src="images/pic05.jpg"> </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6"><img src="images/pic06.jpg"> </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6"><img src="images/pic07.jpg"> </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6"><img src="images/pic08.jpg"> </div>
+    </div>
+</div>
+
+<!--栅格系统的缺点：-->
+<!--当要排列的dom对面不能被12整除的时候，不能使用，因为被分为12格，如需使用，需要设置col-offset属性，这样就不会均匀分布宽度-->
+<!--当遇到这种情况是需要自己设置媒体查询来设置，如下列排列：-->
+<!--.logo-list .col-lg-2{
+width: 20%;
+}
+@media (max-width: 1200px){
+.logo-list .col-lg-2{
+width: 33%;
+float: left;
+}
+}
+@media (max-width: 900px){
+.logo-list .col-lg-2{
+width: 50%;
+float: left;
+}
+}
+@media (max-width: 500px){
+.logo-list .col-lg-2{
+width: 100%;
+}
+}-->
+<div class="container-fluid blue-bg" style="margin-bottom: 80px">
+    <div class="container">
+        <h2 class="common-title text-center">合作伙伴</h2>
+        <div class="row">
+            <div class="common-detail text-center">
+                文字文字文字文字文字文字文字文字文字文字文字文字文字
+               </div>
+        </div>
+    </div>
+    <div class="row logo-list">
+        <div class="col-lg-2"><a href="#"></a></div>
+        <div class="col-lg-2"><a href="#" class="logo02"></a></div>
+        <div class="col-lg-2"><a href="#" class="logo03"></a></div>
+        <div class="col-lg-2"><a href="#" class="logo04"></a></div>
+        <div class="col-lg-2"><a href="#" class="logo05"></a></div>
+    </div>
+</div>
+<!--我们也可以通过设置父类高宽为百分比，子类高宽占父类的百分比来设置自适应-->
+<!--缺点：1.必须设置父类高度才能设置高度为百分比（可以通过jq方法获得屏幕高度），父类宽度如未设置自动识别为占屏幕宽度
+          2.不会自动调整位置，如屏幕缩的很小，视图也会变得很小，导致看不清
+          3.如需看适应效果必须要刷新，而且父类里面的元素虽好都要用百分比来设置宽度
+            -->
+<!--这里设置父类高度为屏幕的50%，宽度为100%；子类占父类的高度60%,宽度80%，则父类和子类都会根据屏幕大小改变自己大小-->
+
+<div style="width: 100%;background-color: #0a628f;padding-top: 100px" class="father">
+    <div style="height: 60%;width: 80%;background-color: #0C0C0C;margin: 0 auto" class="child"></div>
+</div>
+
+
+<!--栅格系统也可以跟媒体查询一起使用，当栅格系统不能忙族需求时，可以通过媒体查询设置-->
+<div class="container-fluid dark-bg">
+    <div class="row foot">
+        <!--设置两个元素的栅格，当页面宽度小于768px时，让文字都靠右显示
+		@media (max-width: 768px) {
+			.foot .col-lg-6{
+					line-height:50px;
+				}
+				.foot .text-right{
+					text-align: left;
+					line-height: 20px;
+				}
+				.foot .col-lg-6 a{
+					padding-left: 0;
+					padding-right:10px;
+				}
+		}
+        -->
+        <div class="col-lg-6 col-md-6 col-sm-6">@kange666.com</div>
+        <div class="col-lg-6 col-md-6 col-sm-6 text-right">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Fap</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+</div>
+<!--
+总结：
+    所谓响应式布局就是根据页面的大小自动改变页内元素的大小位置，一般不做高度的响应式（因为有滑动条），只考虑宽度的自适应
+    页面的响应式布局主要有3个技术：栅格系统，媒体查询，设置百分比占宽高
+        一、栅格系统:把页面宽度12等分，在页面宽度变化时通过设置class:"col-lg,clo-md,clo-sm,col-xs"来设置
+                 缺点：当要排列的dom对面不能被12整除的时候，不能使用，因为被分为12格，如需使用，需要设置col-offset属性，这样就不会均匀分布宽度。
+        二、百分比：通过设置父类高宽为百分比，子类高宽占父类的百分比来设置自适应width:100%;height=100%
+                 缺点：1.必须设置父类高度才能设置高度为百分比（可以通过jq方法获得屏幕高度），父类宽度如未设置自动识别为占屏幕宽度
+                       2.不会自动调整位置，如屏幕缩的很小，视图也会变得很小，导致看不清
+                       3.如需看适应效果必须要刷新，而且子类最好都要用百分比来设置宽度
+        三、媒体查询：如果满足那些条件，则应用相应的样式。@media (max-width: xxx) {}
+                 缺点：代码比较多，不方便，一般用bootstrup封装后的栅格系统来设置
+        根据具体需求选择所用技术。
+        -->
+<script type="text/javascript">
+    $(function () {
+        var $height = $(window).height();
+        $('.father').css("height",$height/2);
+        console.log($('.child').height());
+    })
+</script>
+</body>
+</html>
